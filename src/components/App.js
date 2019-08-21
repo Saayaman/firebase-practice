@@ -8,10 +8,7 @@ import Navigation from './Navigation';
 import LandingPage from './Landing';
 import SignUpPage from './SignUpPage';
 import SignInPage from './SignInPage';
-// import PasswordForgetPage from '../PasswordForget';
 import HomePage from './Home';
-// import AccountPage from '../Account';
-// import AdminPage from '../Admin';
 
 import { withFirebase } from '../firebaseContext';
 
@@ -41,9 +38,6 @@ class App extends React.Component {
                 <Route exact path={ROUTES.LANDING} component={LandingPage} />
                 <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
                 <Route path={ROUTES.SIGN_IN} component={SignInPage} />
-                {/* <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
-                <Route path={ROUTES.ACCOUNT} component={AccountPage} />
-                <Route path={ROUTES.ADMIN} component={AdminPage} /> */}
             </Switch>
         </div>
       </>
