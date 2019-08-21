@@ -25,14 +25,16 @@ export const firebaseConfig = {
             this.auth = firebase.auth();
         }
 
-
         doCreateUserWithEmailAndPassword = (email, password) =>
         this.auth.createUserWithEmailAndPassword(email, password);
 
         doSignInWithEmailAndPassword = (email, password) =>
         this.auth.signInWithEmailAndPassword(email, password);
 
-        doSignOut = () => this.auth.signOut();
+        doSignOut = () => {
+            console.log('hi');
+            return this.auth.signOut();
+        }
 
         doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
 
@@ -41,10 +43,3 @@ export const firebaseConfig = {
     }
 
     export default Firebase;
-
-  
-
-//   export const firebaseApp = firebase.initializeApp(firebaseConfig);
-  
-
-//   export let firebaseAppAuth = firebaseApp.auth();
