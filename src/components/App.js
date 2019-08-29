@@ -10,34 +10,36 @@ import SignUpPage from './SignUpPage';
 import SignInPage from './SignInPage';
 import HomePage from './Home';
 
-import { withFirebase } from '../firebaseContext';
+import SignUpContainer from '../containers/SignUpContainer';
+
+// import { withFirebase } from '../firebaseContext';
 
 import * as ROUTES from '../constants/routes';
 
 class App extends React.Component {
-  state = {
-    authUser: null,
-  }
-  componentDidMount() {
-    this.props.firebase.auth.onAuthStateChanged(authUser => {
-      authUser
-        ? this.setState({ authUser })
-        : this.setState({ authUser: null });
-    });
-  }
+  // state = {
+  //   authUser: null,
+  // }
+  // componentDidMount() {
+  //   this.props.firebase.auth.onAuthStateChanged(authUser => {
+  //     authUser
+  //       ? this.setState({ authUser })
+  //       : this.setState({ authUser: null });
+  //   });
+  // }
   render() {
     return (
       <>
         <div>
-            <Navigation authUser={this.state.authUser} />
+            <Navigation />
     
             <hr />
     
             <Switch>
                 <Route path={ROUTES.HOME} component={HomePage} />
                 <Route exact path={ROUTES.LANDING} component={LandingPage} />
-                <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
-                <Route path={ROUTES.SIGN_IN} component={SignInPage} />
+                <Route path={ROUTES.SIGN_UP} component={SignUpContainer} />
+                {/* <Route path={ROUTES.SIGN_IN} component={SignInPage} /> */}
             </Switch>
         </div>
       </>
@@ -46,4 +48,4 @@ class App extends React.Component {
 }
 
 
-export default withFirebase(App);
+export default App;

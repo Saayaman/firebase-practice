@@ -17,29 +17,33 @@ export const firebaseConfig = {
   };
 
 
+export const firebaseInit = firebase.initializeApp(firebaseConfig) ? firebase : firebase.initializeApp(firebaseConfig)
 
-    class Firebase {
-        constructor() {
-            firebase.initializeApp(firebaseConfig);
+
+
+
+    // class Firebase {
+    //     constructor() {
+    //         firebase.initializeApp(firebaseConfig);
         
-            this.auth = firebase.auth();
-        }
+    //         this.auth = firebase.auth();
+    //     }
 
-        doCreateUserWithEmailAndPassword = (email, password) =>
-        this.auth.createUserWithEmailAndPassword(email, password);
+    //     doCreateUserWithEmailAndPassword = (email, password) =>
+    //     this.auth.createUserWithEmailAndPassword(email, password);
 
-        doSignInWithEmailAndPassword = (email, password) =>
-        this.auth.signInWithEmailAndPassword(email, password);
+    //     doSignInWithEmailAndPassword = (email, password) =>
+    //     this.auth.signInWithEmailAndPassword(email, password);
 
-        doSignOut = () => {
-            console.log('hi');
-            return this.auth.signOut();
-        }
+    //     doSignOut = () => {
+    //         console.log('hi');
+    //         return this.auth.signOut();
+    //     }
 
-        doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
+    //     // doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
 
-        doPasswordUpdate = password =>
-            this.auth.currentUser.updatePassword(password);
-    }
+    //     // doPasswordUpdate = password =>
+    //     //     this.auth.currentUser.updatePassword(password);
+    // }
 
-    export default Firebase;
+    // export default Firebase;

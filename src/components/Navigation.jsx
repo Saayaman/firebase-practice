@@ -6,8 +6,8 @@ import * as ROUTES from '../constants/routes';
 
 
 
-const Navigation = ({ authUser }) => (
-    <div>{authUser ? <NavigationAuth /> : <NavigationNonAuth />}</div>
+const Navigation = () => (
+    <div><NavigationNonAuth /></div>
   );
   
   const NavigationAuth = () => (
